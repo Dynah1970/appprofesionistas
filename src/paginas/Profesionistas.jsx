@@ -122,24 +122,25 @@ useEffect(() => {
 
       {/* Lista de Profesionistas */}
       <ul className="lista-profesionistas">
-        {profesionistas.length === 0 ? (
-          <p>No hay profesionistas registrados.</p>
-        ) : (
-          profesionistas
-            .filter((p) =>
-              p.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-              p.especialidad.toLowerCase().includes(busqueda.toLowerCase())
-            )
-            .map((p) => (
-              <li key={p.id} className="tarjeta">
-                <h3>{p.nombre}</h3>
-                <p><strong>Especialidad:</strong> {p.especialidad}</p>
-                {p.foto && <img src={p.foto} alt="Perfil" className="foto-profesional" />}
-                <button className="btn-cita" onClick={() => handleAgendarCita(p)}>Agendar Cita</button>
-              </li>
-          ))
-        )}
-      </ul>
+  {profesionistas.length === 0 ? (
+    <p>No hay profesionistas registrados.</p>
+  ) : (
+    profesionistas
+      .filter((p) =>
+        p.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
+        p.especialidad.toLowerCase().includes(busqueda.toLowerCase())
+      )
+      .map((p, index) => (
+        <li key={`${p.id}-${index}`} className="tarjeta">
+          <h3>{p.nombre}</h3>
+          <p><strong>Especialidad:</strong> {p.especialidad}</p>
+          {p.foto && <img src={p.foto} alt="Perfil" className="foto-profesional" />}
+          <button className="btn-cita" onClick={() => handleAgendarCita(p)}>Agendar Cita</button>
+        </li>
+    ))
+  )}
+</ul>
+
 
       {/* Modal para Agendar Cita */}
       {citaSeleccionada && (
@@ -167,24 +168,25 @@ useEffect(() => {
 
       {/* Citas Agendadas */}
       <div className="contenedor-citas">
-        <h2>Citas Agendadas</h2>
-        <ul className="lista-citas">
-          {citas.length > 0 ? (
-            citas.map((cita) => (
-              <li key={cita.id} className="tarjeta-cita">
-                <h3>{cita.profesionista.nombre}</h3>
-                <p><strong>Especialidad:</strong> {cita.profesionista.especialidad}</p>
-                <p><strong>Cliente:</strong> {cita.nombreUsuario}</p>
-                <p><strong>Fecha:</strong> {cita.fecha}</p>
-                <p><strong>Hora:</strong> {cita.hora}</p>
-                <button className="btn-eliminar" onClick={() => confirmarEliminarCita(cita)}>Eliminar</button>
-              </li>
-            ))
-          ) : (
-            <p>No hay citas agendadas.</p>
-          )}
-        </ul>
-      </div>
+  <h2>Citas Agendadas</h2>
+  <ul className="lista-citas">
+    {citas.length > 0 ? (
+      citas.map((cita, index) => (
+        <li key={`${cita.id}-${index}`} className="tarjeta-cita">
+          <h3>{cita.profesionista.nombre}</h3>
+          <p><strong>Especialidad:</strong> {cita.profesionista.especialidad}</p>
+          <p><strong>Cliente:</strong> {cita.nombreUsuario}</p>
+          <p><strong>Fecha:</strong> {cita.fecha}</p>
+          <p><strong>Hora:</strong> {cita.hora}</p>
+          <button className="btn-eliminar" onClick={() => confirmarEliminarCita(cita)}>Eliminar</button>
+        </li>
+      ))
+    ) : (
+      <p>No hay citas agendadas.</p>
+    )}
+  </ul>
+</div>
+
 
       {/* Modal de Confirmación de Eliminación */}
       {citaAEliminar && (

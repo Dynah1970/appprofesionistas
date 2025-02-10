@@ -1,0 +1,80 @@
+/* Fondo con degradado */
+.inicio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #fc25aa);
+  color: white;
+  text-align: center;
+}
+
+/* Sección hero */
+.hero {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+  width: 60%;
+}
+
+/* Título */
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.hero h1 span {
+  color: #2600ff;
+}
+
+.hero h1 {
+    font-size: 2rem; /* Tamaño predeterminado */
+    text-align: center;
+    word-wrap: break-word; /* Evita que el texto se desborde */
+  }
+  
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 1.5rem; /* Reduce el tamaño del texto en pantallas pequeñas */
+    }
+  }
+  
+/* Descripción */
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+/* Botones */
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Estilos de botones */
+.btn-explorar,
+.btn-registrarse {
+  background: #ff00a6;
+  color: black;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-explorar:hover {
+  background: #ffd633;
+}
+
+.btn-registrarse {
+  background: rgb(188, 13, 182);
+  color: white#6a11cb;
+}
+
+.btn-registrarse:hover {
+  background: #e0e0e0;
+}

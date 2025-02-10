@@ -1,40 +1,34 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../Formulario.css";
+
+
+
 
 const RegistroUsuario = () => {
   const [nombre, setNombre] = useState("");
   const [correo, setCorreo] = useState("");
   const [contraseña, setContraseña] = useState("");
+  const [confirmarContraseña, setConfirmarContraseña] = useState("");
   const [rol, setRol] = useState("cliente");
+  const [mostrarContraseña, setMostrarContraseña] = useState(false);
   const navigate = useNavigate();
 
-  // Función para validar formato de correo
-  const validarCorreo = (email) => {
-    return /\S+@\S+\.\S+/.test(email);
-  };
-
-  // Manejar el registro
   const handleRegistro = () => {
-    if (!nombre.trim() || !correo.trim() || !contraseña.trim()) {
+    if (!nombre || !correo || !contraseña || !confirmarContraseña) {
       alert("Todos los campos son obligatorios.");
       return;
     }
 
-    if (!validarCorreo(correo)) {
-      alert("Correo electrónico no válido.");
-      return;
-    }
-
-    if (contraseña.length < 6) {
-      alert("La contraseña debe tener al menos 6 caracteres.");
+    if (contraseña !== confirmarContraseña) {
+      alert("Las contraseñas no coinciden.");
       return;
     }
 
     const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    // Verificar si el correo ya está registrado
-    if (usuarios.some(user => user.correo === correo)) {
+    if (usuarios.some((user) => user.correo === correo)) {
       alert("Este correo ya está registrado. Usa otro.");
       return;
     }
@@ -43,34 +37,79 @@ const RegistroUsuario = () => {
     usuarios.push(nuevoUsuario);
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-    // Guardar usuario autenticado en localStorage
-    localStorage.setItem("usuarioAutenticado", JSON.stringify(nuevoUsuario));
+    alert("Registro exitoso. Ahora puedes iniciar sesión.");
 
-    alert("Registro exitoso. Redirigiendo...");
-    navigate("/");
+    // 🔹 Limpiar los campos correctamente
+    setNombre("");
+    setCorreo("");
+    setContraseña("");
+    setConfirmarContraseña("");
+
+    // 🔹 Redirigir según el rol
+    if (rol === "profesionista") {
+      navigate("/registro-profesionista");
+    } else {
+      navigate("/login");
+    }
   };
 
   return (
-    <div className="contenedor">
-      <h1>Registro de Usuario</h1>
-      <label>Nombre:</label>
-      <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} />
+    <div className="formulario-container">
+      <div className="formulario">
+        <h1>Registro de Usuario</h1>
 
-      <label>Correo electrónico:</label>
-      <input type="email" value={correo} onChange={(e) => setCorreo(e.target.value)} />
+        <label>Nombre Completo:</label>
+        <input
+          type="text"
+          value={nombre}
+          onChange={(e) => setNombre(e.target.value)}
+          autoComplete="off"
+        />
 
-      <label>Contraseña:</label>
-      <input type="password" value={contraseña} onChange={(e) => setContraseña(e.target.value)} />
+        <label>Correo electrónico:</label>
+        <input
+          type="email"
+          value={correo}
+          onChange={(e) => setCorreo(e.target.value)}
+          autoComplete="off"
+        />
 
-      <label>Tipo de Usuario:</label>
-      <select value={rol} onChange={(e) => setRol(e.target.value)}>
-        <option value="cliente">Cliente</option>
-        <option value="profesionista">Profesionista</option>
-      </select>
+        <label>Contraseña:</label>
+        <input
+          type={mostrarContraseña ? "text" : "password"}
+          value={contraseña}
+          onChange={(e) => setContraseña(e.target.value)}
+          autoComplete="new-password"
+        />
 
-      <button onClick={handleRegistro}>Registrarse</button>
+        <label>Confirmar Contraseña:</label>
+        <input
+          type={mostrarContraseña ? "text" : "password"}
+          value={confirmarContraseña}
+          onChange={(e) => setConfirmarContraseña(e.target.value)}
+          autoComplete="new-password"
+        />
+
+        <button
+          className="btn-mostrar"
+          onClick={() => setMostrarContraseña(!mostrarContraseña)}
+        >
+          {mostrarContraseña ? "Ocultar Contraseña" : "Mostrar Contraseña"}
+        </button>
+
+        {/* <label>Tipo de Usuario:</label>
+<select value={rol} onChange={(e) => setRol(e.target.value)}>
+  <option value="cliente">Cliente</option>
+  <option value="profesionista">Profesional</option>
+</select> */}
+
+        <button className="btn-registrar" onClick={handleRegistro}>
+          Registrarse
+        </button>
+      </div>
     </div>
   );
 };
 
 export default RegistroUsuario;
+

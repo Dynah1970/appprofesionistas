@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import "../App.css"; 
+import "../Modal.css"; // Importamos los estilos
 
 const RegistroProfesionista = () => {
   const [nombre, setNombre] = useState("");
@@ -146,5 +147,6 @@ const RegistroProfesionista = () => {
     </div>
   );
 };
+
 
 export default RegistroProfesionista;

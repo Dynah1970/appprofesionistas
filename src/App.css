@@ -1,50 +1,50 @@
-/* Estilos para la barra de navegación */
+/* 🔹 Estilos de la barra de navegación */
 .navbar {
-  background-color: #2c3e50;
-  padding: 15px;
-}
-
-.navbar .contenedor {
   display: flex;
-  justify-content: flex-start;
-  gap: 20px;
+  justify-content: center; /* Centra los elementos */
+  align-items: center;
+  background: #2c3e50; /* Color de fondo */
+  padding: 15px 0;
+  width: 100%;
 }
 
-/* Estilos para los botones del menú */
+/* 🔹 Estilos de la lista */
+.nav-links {
+  list-style: none;
+  display: flex; /* Asegura que los elementos estén en una sola línea */
+  gap: 20px; /* Espacio entre elementos */
+  padding: 0;
+  margin: 0;
+}
+
+/* 🔹 Cada elemento de la lista */
+.nav-links li {
+  display: inline;
+}
+
+/* 🔹 Estilos de los enlaces */
 .nav-link {
-  color: white; /* Texto blanco */
-  background-color: #2c3e50; /* Fondo azul oscuro */
-  padding: 10px 15px;
+  text-decoration: none;
+  color: white;
   font-size: 18px;
   font-weight: bold;
-  text-decoration: none;
-  border-radius: 5px; /* Bordes redondeados */
-  border: 2px solid transparent; /* Evita que se muevan al hacer hover */
-  transition: all 0.3s ease-in-out;
+  padding: 10px 15px;
+  transition: 0.3s;
 }
 
 .nav-link:hover {
-  background-color: #34495e; /* Color más oscuro al pasar el mouse */
-  border: 2px solid white; /* Borde blanco para resaltar */
+  background: #34495e;
+  border-radius: 5px;
 }
 
-/* 📱 Hacerlo más responsive en pantallas pequeñas */
+/* 🔹 Hacer la barra responsive en móviles */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 10px;
-  }
-
-  .navbar .contenedor {
-    flex-direction: column; /* Poner los botones en columna en móviles */
-    align-items: center;
-  }
-
-  .nav-link {
-    width: 80%; /* Hacer que los botones ocupen más espacio en móviles */
-    text-align: center;
-  }
+.nav-links {
+  flex-direction: column; /* Solo en móviles poner en columna */
+  align-items: center;
 }
-/* Lista de profesionistas */
+}
+Lista de profesionistas */
 .lista-profesionistas {
   list-style: none;
   padding: 0;
