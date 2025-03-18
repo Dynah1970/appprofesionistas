@@ -1,0 +1,115 @@
+/* 🔹 Contenedor principal */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f8f9fa;
+  }
+  
+  /* 🔹 Caja de inicio de sesión */
+  .login-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* 🔹 Título */
+  .login-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* 🔹 Botones de inicio con Google y Apple */
+  .login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .login-btn img {
+    width: 20px;
+    margin-right: 10px;
+  }
+  
+  .google {
+    background: white;
+    border: 1px solid #ccc;
+  }
+  
+  .apple {
+    background: black;
+    color: white;
+  }
+  
+  /* 🔹 Línea divisoria */
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    color: #888;
+  }
+  
+  .divider span {
+    background: white;
+    padding: 0 10px;
+  }
+  
+  /* 🔹 Campos de formulario */
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* 🔹 Botón de iniciar sesión */
+  .login-submit {
+    background: #007bff;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .login-submit:hover {
+    background: #0056b3;
+  }
+  
+  /* 🔹 Enlaces */
+  .forgot-password {
+    display: block;
+    margin: 10px 0;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .register-link {
+    font-size: 14px;
+  }
+  
+  .register-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  

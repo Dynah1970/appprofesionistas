@@ -1,0 +1,130 @@
+/* 📌 Estilos generales */
+.contenedor-busqueda-nuevo {
+  background-color: #00a99d;
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+/* 📌 Título */
+.titulo-busqueda-nuevo {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.subtitulo-busqueda-nuevo {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* 📌 Botones de selección */
+.opciones-busqueda-nuevo {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.boton-busqueda-nuevo {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.activo-busqueda {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+/* 📌 Input de búsqueda */
+.busqueda-nueva {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.input-libre-nuevo {
+  padding: 10px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* 📌 Botón de búsqueda */
+.boton-buscar-nuevo {
+  background-color: #1c70db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* 🔹🔹🔹 RESPONSIVE 🔹🔹🔹 */
+@media screen and (min-width: 1024px) {
+  .contenedor-busqueda-nuevo {
+      padding: 60px;
+  }
+
+  .titulo-busqueda-nuevo {
+      font-size: 3rem;
+  }
+
+  .subtitulo-busqueda-nuevo {
+      font-size: 1.5rem;
+  }
+
+  .input-libre-nuevo {
+      width: 300px;
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .contenedor-busqueda-nuevo {
+      padding: 50px;
+  }
+
+  .titulo-busqueda-nuevo {
+      font-size: 2.2rem;
+  }
+
+  .input-libre-nuevo {
+      width: 45%;
+  }
+
+  .boton-buscar-nuevo {
+      width: 45%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contenedor-busqueda-nuevo {
+      padding: 30px;
+  }
+
+  .titulo-busqueda-nuevo {
+      font-size: 1.8rem;
+  }
+
+  .subtitulo-busqueda-nuevo {
+      font-size: 1rem;
+  }
+
+  .busqueda-nueva {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .input-libre-nuevo {
+      width: 100%;
+  }
+
+  .boton-buscar-nuevo {
+      width: 100%;
+  }
+}

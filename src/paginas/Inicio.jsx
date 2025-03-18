@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";  
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../Inicio.css"; 
+import { FaUserTie, FaChalkboardTeacher, FaInfoCircle, FaSignInAlt } from "react-icons/fa";
+import "../Inicio.css";
 
 const Inicio = () => {
   const navigate = useNavigate();
@@ -11,14 +12,29 @@ const Inicio = () => {
     <div className="inicio-container">
       <div className="hero">
         <h1>Bienvenido a <span>ProfesionalistasApp</span></h1>
-        <p>Encuentra y agenda citas con profesionales certificados de diversas áreas.</p>
+        <p>Conecta con profesionales certificados y consultores expertos en diversas áreas. Explora opciones, agenda citas y encuentra el apoyo que necesitas de manera segura y rápida.</p>
+        
+        <div className="beneficios">
+          <p>✅ Profesionales y consultores <strong>certificados</strong></p>
+          <p>✅ Agendas y pagos <strong>seguros</strong></p>
+          <p>✅ Historial de consultas y seguimiento <strong>en un solo lugar</strong></p>
+        </div>
         
         <div className="botones">
           <button className="btn-explorar" onClick={() => navigate("/profesionistas")}>
-            Explorar Profesionales
+            <FaUserTie /> Explorar Profesionales
+          </button>
+          <button className="btn-explorar" onClick={() => navigate("/consultores")}>
+            <FaChalkboardTeacher /> Explorar Consultores
+          </button>
+          <button className="btn-explorar" onClick={() => navigate("/sobre-nosotros")}>
+            <FaInfoCircle /> Conocer Más
           </button>
           <button className="btn-registrarse" onClick={() => setMostrarModal(true)}>
             Registrarse
+          </button>
+          <button className="btn-iniciar" onClick={() => navigate("/login")}>
+            <FaSignInAlt /> Iniciar Sesión
           </button>
         </div>
       </div>

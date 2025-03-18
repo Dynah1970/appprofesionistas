@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 import React, { useState, useEffect } from "react";
-import "../App.css"; 
+import Footer from "../componentes/Footer";import "../App.css"; 
 import "../Modal.css"; // Importamos los estilos
 
 const RegistroProfesionista = () => {

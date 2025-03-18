@@ -1,28 +1,54 @@
-/* 🔹 Estilos de la barra de navegación */
-.navbar {
-  display: flex;
-  justify-content: center; /* Centra los elementos */
-  align-items: center;
-  background: #2c3e50; /* Color de fondo */
-  padding: 15px 0;
-  width: 100%;
+/* 🔹 Reseteo del fondo global */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: white !important;  /* Cambia "white" por el color que quieras */
 }
 
-/* 🔹 Estilos de la lista */
+/* 🔹 Contenedor principal con fondo verde claro */
+.contenido {
+  min-height: 100vh;
+  padding-top: 80px;
+  background: linear-gradient(to right, white); /* Verde muy claro */
+ 
+}
+
+/* 🔹 Estilos generales */
+.navbar {
+  display: flex;
+  justify-content:  space-between; ; /* Centra los elementos en la barra */
+  align-items: center;
+  background: #8b1c62;
+  padding: 15px 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* 🔹 Menú hamburguesa (SIEMPRE OCULTO hasta que se abra) */
+.menu-hamburguesa {
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  display: block;
+}
+
+/* 🔹 Barra de navegación horizontal (solo en computadoras) */
 .nav-links {
   list-style: none;
-  display: flex; /* Asegura que los elementos estén en una sola línea */
-  gap: 20px; /* Espacio entre elementos */
+  display: flex;
+  gap: 20px;
   padding: 0;
   margin: 0;
 }
 
-/* 🔹 Cada elemento de la lista */
 .nav-links li {
   display: inline;
 }
 
-/* 🔹 Estilos de los enlaces */
 .nav-link {
   text-decoration: none;
   color: white;
@@ -33,17 +59,131 @@
 }
 
 .nav-link:hover {
-  background: #34495e;
+  background: #a6246d;
   border-radius: 5px;
 }
 
-/* 🔹 Hacer la barra responsive en móviles */
-@media (max-width: 768px) {
-.nav-links {
-  flex-direction: column; /* Solo en móviles poner en columna */
+/* 🔹 Menú lateral deslizable */
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Oculto por defecto */
+  width: 250px;
+  height: 100%;
+  background: rgba(139, 28, 98, 0.95);
+  transition: left 0.3s ease-in-out;
+  padding-top: 50px;
+}
+
+.menu-lateral.activo {
+  left: 0;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-lateral li {
+  padding: 15px;
+  text-align: left;
+}
+
+.menu-lateral .nav-link {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+
+.menu-lateral .nav-link:hover {
+  background: #a6246d;
+  border-radius: 5px;
+}
+
+/* 🔹 Botón de cerrar menú */
+.cerrar-menu {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* 🔹 Responsive para dispositivos pequeños */
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none; /* Ocultar la barra horizontal en móviles y tabletas */
+  }
+
+  .menu-hamburguesa {
+    display: block; /* Mostrar el menú hamburguesa */
+  }
+}
+
+/* 🔹 Ajustar la barra de navegación */
+.navbar {
+  display: flex;
   align-items: center;
+  background: #4c1c8b;
+  padding: 15px 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
+
+/* 🔹 Menú hamburguesa alineado a la izquierda */
+.menu-hamburguesa {
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  margin-right: auto; /* Mueve el menú hamburguesa completamente a la izquierda */
 }
+
+/* 🔹 Centrar las pestañas */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0 auto; /* Centra las pestañas */
+}
+
+/* 🔹 Estilos de las pestañas */
+.nav-links li {
+  display: inline;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  background: #1a15b0;
+  border-radius: 5px;
+}
+
+/* 🔹 Responsive para dispositivos pequeños */
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none; /* Ocultar la barra horizontal en móviles y tabletas */
+  }
+
+  .menu-hamburguesa {
+    display: block; /* Mostrar el menú hamburguesa */
+  }
+}
+
 Lista de profesionistas */
 .lista-profesionistas {
   list-style: none;
@@ -508,3 +648,430 @@ Lista de profesionistas */
 .btn-cancelar:hover {
   background: #1a252f;
 }
+/* 🔹 Ajuste para que el contenido no se esconda debajo del header */
+.contenido {
+  margin-top: 80px; /* Ajusta este valor según la altura de la barra de navegación */
+  padding: 20px;
+}
+
+
+/* 🔹 Asegurar que el contenido tenga suficiente espacio antes del footer */
+.contenido {
+  min-height: calc(100vh - 100px); /* Ajusta el espacio para que el footer no tape el contenido */
+  padding-bottom: 100px;
+}
+
+
+/* 🔹 Estilos del Footer */
+.footer {
+  background: #c2e110;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+
+
+/* 🔹 Estilos de los enlaces del footer */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links li {
+  display: inline;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+/* Contenedor del menú desplegable */
+.menu-desplegable {
+    position: relative;
+    display: inline-block;
+}
+
+/* Botón del menú */
+.menu-boton {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Contenedor del menú desplegable */
+.menu-contenido {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 10px 0;
+    min-width: 230px;
+    z-index: 1000;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    list-style: none; /* Elimina los puntos de lista */
+    padding: 0;
+}
+
+/* Mostrar el menú cuando el usuario pasa el mouse */
+.menu-desplegable:hover .menu-contenido {
+    display: block;
+}
+
+/* Estilos para cada opción del menú */
+.menu-contenido li {
+    display: block;
+    padding: 0;
+}
+
+.menu-contenido a {
+    display: block;
+    color: #333 !important;
+    text-decoration: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Cambiar color al pasar el mouse */
+.menu-contenido a:hover {
+    background-color: #ffcc00 !important;
+    color: black !important;
+}
+/* Contenedor del menú desplegable */
+.menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Botón del menú (Soluciones, Información, etc.) */
+.menu-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff; /* Ajusta al color de las pestañas principales */
+  cursor: pointer;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.menu-button:hover {
+  background: rgba(255, 255, 255, 0.2); /* Efecto hover */
+}
+
+/* Menú desplegable */
+.menu-dropdown {
+  position: absolute;
+  top: 100%; /* Asegura que aparezca justo debajo del botón */
+  left: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #FFC107; /* Línea amarilla en la parte superior */
+  min-width: 220px;
+  padding: 10px 0;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* Mostrar menú desplegable cuando está activo */
+.menu-container:hover .menu-dropdown,
+.menu-container:focus-within .menu-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Elementos dentro del menú */
+.menu-dropdown a {
+  display: block;
+  padding: 12px 15px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+/* Efecto hover en los elementos */
+.menu-dropdown a:hover {
+  background-color: #f1f1f1;
+}
+/* Asegura que la barra de navegación tenga los elementos alineados */
+.navbar {
+  display: flex;
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: space-around;
+  background-color: #4B0082; /* Color de fondo */
+  padding: 15px 0;
+}
+
+/* Contenedor de los enlaces y menús desplegables */
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center; /* Asegura que todo esté alineado */
+}
+
+/* Asegura que los elementos del menú tengan el mismo tamaño */
+.nav-links li {
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+}
+
+/* Asegura que los enlaces normales estén alineados */
+.nav-link {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: background 0.3s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Ajuste de los botones de los menús desplegables */
+.menu-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Botón de los menús desplegables */
+.menu-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+/* Asegura que el menú desplegable no desplace los elementos del menú */
+.menu-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #FFC107;
+  min-width: 220px;
+  padding: 10px 0;
+  z-index: 1000;
+  display: none;
+}
+
+.menu-container:hover .menu-dropdown {
+  display: block;
+}
+
+/* Ajuste para que los menús desplegables se alineen con el texto */
+.menu-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+/* BusquedaResponsive.css */
+
+/* 📌 Estilos generales */
+.contenedor-busqueda {
+  background-color: #00a99d; /* Color de fondo */
+  color: white; /* Texto blanco */
+  padding: 40px;
+  text-align: center;
+}
+
+/* 📌 Título principal */
+.titulo-busqueda {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.subtitulo-busqueda {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* 📌 Contenedor de opciones */
+.opciones-consulta {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.boton-consulta {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.boton-activo {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+.boton-inactivo {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+/* 📌 Input de búsqueda */
+.contenedor-input {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.input-busqueda {
+  padding: 10px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* 📌 Botón de búsqueda */
+.boton-buscar {
+  background-color: #1c70db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* 🔹🔹🔹 RESPONSIVE DESIGN 🔹🔹🔹 */
+
+/* ✅ Para pantallas grandes (escritorio) */
+@media screen and (min-width: 1024px) {
+  .contenedor-busqueda {
+    padding: 60px;
+  }
+
+  .titulo-busqueda {
+    font-size: 3rem;
+  }
+
+  .subtitulo-busqueda {
+    font-size: 1.5rem;
+  }
+
+  .contenedor-input {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .input-busqueda {
+    width: 300px;
+  }
+}
+
+/* ✅ Para tabletas (pantallas medianas) */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .contenedor-busqueda {
+    padding: 50px;
+  }
+
+  .titulo-busqueda {
+    font-size: 2.2rem;
+  }
+
+  .subtitulo-busqueda {
+    font-size: 1.3rem;
+  }
+
+  .contenedor-input {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .input-busqueda {
+    width: 45%;
+  }
+
+  .boton-buscar {
+    width: 45%;
+  }
+}
+
+/* ✅ Para celulares (ajuste más compacto) */
+@media screen and (max-width: 767px) {
+  .contenedor-busqueda {
+    padding: 30px;
+  }
+
+  .titulo-busqueda {
+    font-size: 1.8rem;
+  }
+
+  .subtitulo-busqueda {
+    font-size: 1rem;
+  }
+
+  .opciones-consulta {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contenedor-input {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .input-busqueda {
+    width: 100%;
+  }
+
+  .boton-buscar {
+    width: 100%;
+  }
+}
+
+

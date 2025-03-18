@@ -1,56 +1,75 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
-import PropTypes from "prop-types"; // ✅ Importar PropTypes
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-const Login = ({ setUsuarioAutenticado }) => {
+import "../App.css"; 
+import "../login.css";
+
+
+const Login = () => {
   const [correo, setCorreo] = useState("");
   const [contraseña, setContraseña] = useState("");
-  const [mostrarContraseña, setMostrarContraseña] = useState(false);
-  const navigate = useNavigate();
 
-  const handleLogin = () => {
-    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+  // 🔹 Limpiar los campos cuando se carga la página
+  useEffect(() => {
+    setCorreo("");
+    setContraseña("");
+  }, []);
 
-    const usuarioEncontrado = usuarios.find(
-      user => user.correo === correo && user.contraseña === contraseña
-    );
-
-    if (!usuarioEncontrado) {
-      alert("Correo o contraseña incorrectos.");
-      return;
-    }
-
-    localStorage.setItem("usuarioAutenticado", JSON.stringify(usuarioEncontrado));
-    setUsuarioAutenticado(usuarioEncontrado);
-
-    alert(`Bienvenido, ${usuarioEncontrado.nombre}`);
-
-    navigate(usuarioEncontrado.rol === "profesionista" ? "/panel-profesionista" : "/profesionistas");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Inicio de sesión exitoso");
   };
 
   return (
-    <div className="contenedor">
-      <h1>Iniciar Sesión</h1>
+    <div className="login-container">
+      <div className="login-box">
+        <h1 className="login-title">Accede a tu cuenta</h1>
 
-      <label>Correo Electrónico:</label>
-      <input type="email" value={correo} onChange={(e) => setCorreo(e.target.value)} placeholder="Correo Electrónico" autoComplete="off" />
+        <button className="login-btn google">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" />
+          Continuar con Google
+        </button>
 
-      <label>Contraseña:</label>
-      <input type={mostrarContraseña ? "text" : "password"} value={contraseña} onChange={(e) => setContraseña(e.target.value)} placeholder="Contraseña" autoComplete="new-password" />
+        <button className="login-btn apple">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
+          Continuar con Apple
+        </button>
 
-      <button className="toggle-password" onClick={() => setMostrarContraseña(!mostrarContraseña)}>
-        {mostrarContraseña ? "Ocultar Contraseña" : "Mostrar Contraseña"}
-      </button>
+        <div className="divider">
+          <span>o</span>
+        </div>
 
-      <button onClick={handleLogin}>Ingresar</button>
+        <form onSubmit={handleSubmit} autoComplete="off">
+          <input
+            type="email"
+            name="correo"
+            placeholder="Correo electrónico"
+            value={correo}
+            onChange={(e) => setCorreo(e.target.value)}
+            autoComplete="new-email" /* Truco para evitar autocompletado */
+            required
+          />
+          <input
+            type="password"
+            name="contraseña"
+            placeholder="Contraseña"
+            value={contraseña}
+            onChange={(e) => setContraseña(e.target.value)}
+            autoComplete="new-password" /* Truco para evitar autocompletado */
+            required
+          />
+          <button type="submit" className="login-submit">Iniciar sesión</button>
+        </form>
+
+        <a href="#" className="forgot-password">He olvidado mi contraseña</a>
+
+        <p className="register-link">
+          ¿Todavía sin cuenta? <Link to="/registro-usuario">Quiero registrarme</Link>
+        </p>
+      </div>
     </div>
   );
-};
-
-// ✅ Agregar validación de PropTypes
-Login.propTypes = {
-  setUsuarioAutenticado: PropTypes.func.isRequired,
 };
 
 export default Login;

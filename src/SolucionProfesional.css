@@ -1,0 +1,597 @@
+/* ====== ESTILOS GENERALES ====== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #415c64;
+}
+
+.contenedor-solucion {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ====== HERO SECTION ====== */
+.seccion-hero {
+  background-color: #e8f0fe;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.texto-hero {
+  max-width: 600px;
+}
+
+.entrada-hero {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.boton-hero {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ====== CARACTERÍSTICAS ====== */
+.seccion-caracteristicas {
+  padding: 50px 20px;
+  background: white;
+  text-align: center;
+}
+
+.contenedor-caracteristicas {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.caracteristica-item {
+  flex: 1;
+  max-width: 300px;
+  background: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* ====== SECCIÓN AGENDAMIENTO ====== */
+.seccion-agendamiento {
+  background-color: #f8f9fa;
+  padding: 50px 20px;
+}
+
+.contenedor-agendamiento {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.imagen-agendamiento img {
+  max-width: 100%;
+  height: auto;
+}
+
+.contenido-agendamiento {
+  max-width: 500px;
+}
+
+.lista-desplegable {
+  max-width: 500px;
+}
+
+.opcion-desplegable {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.boton-agendamiento {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ====== SECCIÓN COMUNICACIÓN ====== */
+.seccion-comunicacion {
+  background-color: #ffffff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.contenedor-comunicacion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.imagen-comunicacion img {
+  max-width: 100%;
+  height: auto;
+}
+
+.boton-comunicacion {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ====== SECCIÓN PRESENCIA ONLINE ====== */
+.seccion-presencia {
+  background-color: #f8f9fa;
+  padding: 50px 20px;
+}
+
+.contenedor-presencia {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contenido-presencia {
+  max-width: 500px;
+}
+
+.lista-desplegable {
+  max-width: 500px;
+}
+
+.opcion-desplegable {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.boton-presencia {
+  background-color: #fd7e14;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ====== SECCIÓN REPUTACIÓN DIGITAL ====== */
+.seccion-reputacion {
+  background-color: #f8f9fa;
+  padding: 50px 20px;
+}
+
+.contenedor-reputacion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contenido-reputacion {
+  max-width: 500px;
+}
+
+.boton-reputacion {
+  background-color: #17a2b8;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ====== SECCIÓN VIDEOCONSULTAS ====== */
+.seccion-videoconsultas {
+  background-color: #f8f9fa;
+  padding: 50px 20px;
+}
+
+.contenedor-videoconsultas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.imagen-videoconsulta {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+}
+
+.imagen-videoconsulta img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.contenido-videoconsultas {
+  flex: 1;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.contenido-videoconsultas h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #002147;
+  margin-bottom: 15px;
+}
+
+.lista-desplegable {
+  max-width: 100%;
+}
+
+.opcion-desplegable {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.boton-videoconsultas {
+  background-color: #0056b3;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .contenedor-videoconsultas {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .imagen-videoconsulta {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .contenido-videoconsultas {
+    max-width: 100%;
+  }
+}
+
+/* ====== SECCIÓN VIDEOCONSULTAS ====== */
+.seccion-videoconsultas {
+  background-color: #ffffff;
+  padding: 50px 20px;
+}
+
+.contenedor-videoconsultas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.imagen-videoconsulta {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.imagen-videoconsulta img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.contenido-videoconsultas {
+  flex: 1;
+  max-width: 500px;
+  padding-left: 20px;
+}
+
+.boton-videoconsultas {
+  background-color: #0056b3;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+}
+
+/* ====== SECCIÓN EPISODIOS CLÍNICOS ====== */
+.seccion-episodios {
+  background-color: #f8f9fa;
+  padding: 50px 20px;
+}
+
+.contenedor-episodios {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.imagen-episodios {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.imagen-episodios img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.contenido-episodios {
+  flex: 1;
+  max-width: 500px;
+  padding-left: 20px;
+}
+
+.boton-episodios {
+  background-color: #0056b3;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+}
+
+/* ====== DEPLEGABLES ESTILO TARJETA ====== */
+.lista-desplegable details {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.lista-desplegable summary {
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.lista-desplegable details[open] {
+  border-left: 4px solid #0d6efd;
+}
+
+.lista-desplegable details[open] summary {
+  color: #0d6efd;
+}
+
+.lista-desplegable details[open] p {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+/* ====== SECCIÓN PREGUNTAS FRECUENTES ====== */
+.seccion-preguntas {
+  background-color: #ffffff;
+  padding: 50px 20px;
+  max-width: 1100px;
+  margin: auto;
+  
+}
+
+.titulo-preguntas {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #002147;
+  margin-bottom: 30px;
+}
+
+.contenedor-preguntas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Estilo de cada pregunta */
+.pregunta {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ccc;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: #002147;
+}
+
+.pregunta[open] {
+  font-weight: bold;
+}
+
+.pregunta summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pregunta summary::after {
+  content: "▼";
+  font-size: 14px;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.pregunta[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.pregunta p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 992px) {
+  .contenedor-preguntas {
+    grid-template-columns: 1fr;
+  }
+
+  .pregunta {
+    font-size: 16px;
+  }
+
+  .titulo-preguntas {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .seccion-preguntas {
+    padding: 30px 15px;
+  }
+
+  .pregunta {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .pregunta summary::after {
+    font-size: 12px;
+  }
+
+  .pregunta p {
+    font-size: 14px;
+  }
+
+  .titulo-preguntas {
+    font-size: 22px;
+  }
+}
+
+/* ================== RESPONSIVE DESIGN ================== */
+
+/* Para tabletas (pantallas menores a 1024px) */
+@media (max-width: 1024px) {
+  .contenedor-hero,
+  .contenedor-caracteristicas,
+  .contenedor-agendamiento,
+  .contenedor-comunicacion,
+  .contenedor-presencia,
+  .contenedor-reputacion,
+  .contenedor-videoconsultas,
+  .contenedor-episodios {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .imagen-hero img,
+  .imagen-comunicacion img,
+  .imagen-presencia img,
+  .imagen-reputacion img,
+  .imagen-videoconsulta img,
+  .imagen-episodios img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  .acciones-hero {
+    flex-direction: column;
+  }
+
+  .entrada-hero {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .boton-hero,
+  .boton-agendamiento,
+  .boton-comunicacion,
+  .boton-presencia,
+  .boton-reputacion,
+  .boton-videoconsultas,
+  .boton-episodios {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .lista-desplegable details {
+    width: 100%;
+  }
+}
+
+/* Para celulares (pantallas menores a 768px) */
+@media (max-width: 768px) {
+  .seccion-hero {
+    padding: 40px 10px;
+  }
+
+  .titulo-hero {
+    font-size: 24px;
+  }
+
+  .descripcion-hero {
+    font-size: 16px;
+  }
+
+  .caracteristica-item {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .opcion-desplegable {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .pregunta summary {
+    font-size: 16px;
+  }
+
+  .contenedor-preguntas {
+    flex-direction: column;
+    align-items: center;
+  }
+}

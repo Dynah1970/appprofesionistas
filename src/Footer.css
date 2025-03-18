@@ -1,0 +1,334 @@
+
+/* ✅ Estilos para la Sección CTA */
+.seccion-cta {
+  background: #cb1b79; /* Fondo verde */
+  color: white;
+  text-align: center;
+  padding: 40px 0; /* Ajustar padding para asegurar que se vea bien */
+  width: 100vw; /* Asegura que ocupe todo el ancho de la ventana */
+  margin: 0; /* Elimina márgenes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-x: hidden; /* Asegura que no haya desplazamiento horizontal */
+}
+
+.cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 100%; /* Elimina cualquier límite de ancho */
+  margin: 0; /* Asegura que el contenido ocupe todo el ancho disponible */
+}
+
+.cta-content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.cta-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.btn-cta {
+  background: #007bff; /* Color azul del botón */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cta:hover {
+  background: #0056b3;
+}
+
+/* Media Query para tabletas y móviles */
+@media (max-width: 768px) {
+  .seccion-cta {
+    padding: 30px 10px; /* Reducir padding para pantallas pequeñas */
+  }
+
+  .cta-content h2 {
+    font-size: 28px; /* Reducir tamaño del título */
+  }
+
+  .cta-content p {
+    font-size: 16px; /* Reducir tamaño de la descripción */
+  }
+
+  .btn-cta {
+    padding: 12px 20px;
+    font-size: 1em; /* Reducir el tamaño de la fuente del botón */
+  }
+}
+
+@media (max-width: 480px) {
+  .seccion-cta {
+    padding: 20px 5px; /* Reducir padding aún más en móviles */
+  }
+
+  .cta-content h2 {
+    font-size: 24px; /* Título más pequeño en móviles */
+  }
+
+  .cta-content p {
+    font-size: 14px; /* Descripción más pequeña */
+  }
+
+  .btn-cta {
+    width: 100%; /* Botón de ancho completo en móviles */
+    padding: 12px 0;
+    font-size: 16px; /* Aumentar el tamaño del texto en el botón */
+  }
+}
+
+
+/* ✅ Estilos para el Pie de Página */
+.footer {
+    background: #3215db;
+    padding: 40px 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.footer-links h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 5px;
+    color: #333;
+}
+.carrusel {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    padding: 10px 0;
+    justify-content: center;
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+.reseñas-wrapper {
+    display: flex;
+    transition: transform 0.6s ease-in-out; /* Transición más fluida */
+}
+
+/* Tamaño normal en pantallas grandes */
+.reseña-card {
+    flex: 0 0 18%;
+    max-width: 18%;
+    background: white;
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 5px;
+    font-size: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal;
+    height: auto;
+}
+
+
+/* 🔹 Ajuste para tabletas (se muestran más grandes y centrados) */
+@media (max-width: 1024px) {
+    .reseña-card {
+        flex: 0 0 30%;
+        max-width: 30%;
+        font-size: 12px;
+        padding: 12px;
+    }
+}
+
+/* 🔹 Ajuste para celulares (ocupa casi toda la pantalla) */
+@media (max-width: 768px) {
+    .reseña-card {
+        flex: 0 0 45%;
+        max-width: 45%;
+        font-size: 14px;
+        padding: 15px;
+    }
+}
+
+/* 🔹 Ajuste para celulares muy pequeños (1 tarjeta por fila) */
+@media (max-width: 480px) {
+    .reseña-card {
+        flex: 0 0 80%;
+        max-width: 80%;
+        font-size: 16px;
+        padding: 20px;
+    }
+}
+/* 🔹 Ajuste para tabletas (se muestran más grandes y centrados) */
+@media (max-width: 1024px) {
+    .reseña-card {
+        flex: 0 0 35%;  /* Incrementar el ancho de las tarjetas en tabletas */
+        max-width: 35%; /* Limitar a un 35% máximo */
+        font-size: 14px; /* Aumentar el tamaño de la fuente */
+        padding: 15px;   /* Más espacio en el interior */
+    }
+}
+
+/* 🔹 Ajuste para celulares (ocupa casi toda la pantalla) */
+@media (max-width: 768px) {
+    .reseña-card {
+        flex: 0 0 60%; /* Incrementar el tamaño de las tarjetas en móviles */
+        max-width: 60%; /* Limitar a un 60% máximo */
+        font-size: 16px; /* Aumentar el tamaño de la fuente */
+        padding: 20px;   /* Más espacio en el interior */
+    }
+}
+
+/* 🔹 Ajuste para celulares muy pequeños (1 tarjeta por fila) */
+@media (max-width: 480px) {
+    .reseña-card {
+        flex: 0 0 90%; /* Hacer las tarjetas casi de todo el ancho en pantallas pequeñas */
+        max-width: 90%; /* Limitar a un 90% máximo */
+        font-size: 18px; /* Aumentar el tamaño de la fuente */
+        padding: 25px;   /* Más espacio en el interior */
+    }
+}
+
+/* ✅ Estilos para el Pie de Página */
+.nfinal {
+  background: #fff;
+  padding: 40px 0; /* Ajustamos el padding */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  margin-top: 50px; /* Espacio extra entre la sección CTA y el pie de página */
+  width: 100vw; /* Asegura que ocupe todo el ancho de la ventana */
+  margin: 0; /* Eliminar márgenes */
+  overflow-x: hidden; /* Asegura que no haya desplazamiento horizontal */
+}
+
+.nfinal-container {
+  display: flex;
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 1200px; /* Limita el ancho máximo a 1200px */
+  justify-content: space-between;
+  gap: 30px; /* Espacio entre los elementos */
+  margin: 0; /* Elimina márgenes */
+}
+
+.nfinal-logo {
+  max-width: 250px;
+}
+
+.nfinal-logo-img {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.nfinal-logo p {
+  font-size: 14px;
+  color: #666;
+  margin: 2px 0;
+}
+
+.nfinal-btn {
+  background: #0057ff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.nfinal-links {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap; /* Asegura que los enlaces se acomoden bien en pantallas pequeñas */
+}
+
+.nfinal-links h4 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.nfinal-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nfinal-links ul li {
+  margin-bottom: 5px;
+}
+
+.nfinal-links ul li a {
+  text-decoration: none;
+  color: #0073e6;
+  font-size: 14px;
+}
+
+.nfinal-links ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Media Query para tablets y móviles */
+@media (max-width: 768px) {
+  .nfinal-container {
+      flex-direction: column; /* Cambiar la dirección de los elementos en pantallas pequeñas */
+      align-items: center;
+      gap: 20px; /* Reducir el espacio entre los elementos */
+  }
+
+  .nfinal-logo {
+      text-align: center; /* Centrar el logo en pantallas pequeñas */
+  }
+
+  .nfinal-links {
+      justify-content: center;
+  }
+
+  .nfinal-links h4 {
+      font-size: 14px;
+  }
+
+  .nfinal-links ul li a {
+      font-size: 12px; /* Reducir el tamaño de la fuente en pantallas pequeñas */
+  }
+
+  .nfinal-btn {
+      width: 100%; /* Hacer el botón más grande en pantallas pequeñas */
+      padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nfinal {
+      padding: 30px 20px; /* Reducir el padding en móviles */
+  }
+
+  .nfinal-container {
+      padding: 0 10px; /* Reducir el padding de la container */
+  }
+
+  .nfinal-logo-img {
+      width: 120px; /* Reducir el tamaño del logo en móviles */
+  }
+}
